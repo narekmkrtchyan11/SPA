@@ -1,17 +1,17 @@
 import './style.css';
-import './firstPage'
-import { setHeader } from './header';
-import { createFirstPage } from './firstPage';
+import { setHeader } from './createHeader';
+import { router } from './router';
+
 const root = document.getElementById("root") as HTMLElement;
+const body = document.querySelector("body") as HTMLBodyElement;
+
+setHeader(body);
+
+function initRouteChange() {
+    router(root);
+}
+
+document.addEventListener("DOMContentLoaded", initRouteChange);
+window.addEventListener("popstate", initRouteChange);
 
 
-setHeader(root);
-createFirstPage(root);
-
-
-
-
-
-
-
-export {root};

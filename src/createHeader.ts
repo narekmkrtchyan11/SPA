@@ -7,5 +7,4 @@ function setHeader(root: HTMLElement) {
     root.appendChild(header);
 }
 
-
 export {setHeader}

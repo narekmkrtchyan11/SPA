@@ -17,12 +17,22 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
+    historyApiFallback: true,
+    hot: true,
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/',
   },
   plugins: [new HtmlWebpackPlugin({
     template: "public/index.html"
